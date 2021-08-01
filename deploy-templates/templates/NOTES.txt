@@ -1,0 +1,1 @@
+1. Application model-core-base-image has been successfully deployed!!
