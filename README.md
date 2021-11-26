@@ -4,3 +4,6 @@ This library contains **all** the common DTO classes needed to connect registry 
 
 # Deployment
 The library is delivered as a docker image with all dependencies inside.
+
+### License
+model-core is Open Source software released under the Apache 2.0 license.
