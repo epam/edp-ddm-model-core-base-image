@@ -1,5 +1,7 @@
-FROM nexus-docker-registry.apps.cicd2.mdtu-ddm.projects.epam.com/maven:3.8.1-jdk-11-slim
+FROM maven:3.8.1-jdk-11-slim
+ARG NEXUS_URL
 WORKDIR /app
 COPY pom.xml settings.xml ./
 COPY src src
-RUN mvn install --settings settings.xml -DskipTests=true -Dartifactory.baseUrl=https://nexus-public-mdtu-ddm-edp-cicd.apps.cicd2.mdtu-ddm.projects.epam.com -Dartifactory.groupPath=edp-maven-group -Dartifactory.releasePath=edp-maven-releases -Dartifactory.snapshotsPath=edp-maven-snapshots
+RUN mvn install --settings settings.xml -DskipTests=true -Dartifactory.baseUrl=$NEXUS_URL -Dartifactory.groupPath=edp-maven-group -Dartifactory.releasePath=edp-maven-releases -Dartifactory.snapshotsPath=edp-maven-snapshots
+RUN find ~/.m2 -name "_remote.repositories" -exec rm -f {} \;
