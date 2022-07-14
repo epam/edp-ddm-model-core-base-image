@@ -16,11 +16,14 @@
 
 package com.epam.digital.data.platform.model.core.kafka;
 
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 public class File {
 
+  @NotNull
   private String id;
+  @NotNull
   private String checksum;
 
   public File() {
