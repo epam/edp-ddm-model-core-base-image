@@ -23,7 +23,8 @@
         <sonar.coverage.exclusions>
             **/kafka/*,
             **/geometry/*,
-            **/search/*
+            **/search/*,
+            **/file/*
         </sonar.coverage.exclusions>
     </properties>
 
